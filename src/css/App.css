@@ -16,6 +16,15 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+a:visited {
+  color: #1a1a1a;
+}
+
 h1 {
   font-size: 3.2rem;
   font-weight: bold;

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./css/reset.css";
 import "./css/App.css";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 
 import Offers from "./containers/Offers";
@@ -56,7 +56,7 @@ function App() {
           <Router>
             <Header />
             <Switch>
-              <Route path="/offer">
+              <Route path="/offer/:id">
                 <Offer />
               </Route>
               <Route path="/">
