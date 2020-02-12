@@ -60,7 +60,7 @@ function App() {
                 <Offer />
               </Route>
               <Route path="/">
-                <Offers />
+                <Offers offers={offers} />
               </Route>
             </Switch>
             <Footer />

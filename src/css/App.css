@@ -24,10 +24,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2.4rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  /* font-weight: bold; */
   color: #2e3333;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -58,6 +59,9 @@ header {
   height: 60px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   z-index: 2;
+  position: sticky;
+  top: 0px;
+  background-color: white;
 }
 
 header .menu {
@@ -65,8 +69,6 @@ header .menu {
   flex-direction: row;
   justify-content: space-between;
   height: auto;
-  /* position: sticky; */
-  /* top: 0; */
 }
 
 header .menu > .menu-left,
@@ -128,9 +130,11 @@ header .btn-deposit {
 header .btn-deposit svg {
   margin-right: 10px;
 }
+
 header .icon {
   font-size: 2.2rem;
 }
+
 footer {
   background-color: #474747;
   padding: 30px;
@@ -139,6 +143,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 div.search-bar {
   width: 810px;
   margin: 0 auto;
@@ -210,4 +215,42 @@ div.search-bar form input[type="submit"] {
   width: 110%;
   left: -5%;
   height: 100px;
+}
+
+ul.products-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+ul.products-list li {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  box-shadow: 1px 1px 8px 1px #e6ebef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+ul.products-list li .product-ima {
+  width: 240px;
+  height: 180px;
+  background-color: #cad1d9;
+}
+
+ul.products-list li .product-ima img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+ul.products-list li .product-infos {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ul.products-list li .product-infos span {
+  color: #f56b2a;
+  font-size: 2rem;
 }

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
+import Product from "../components/Product";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Offers() {
+function Offers({ offers }) {
+  console.log("Offers", offers);
   return (
     <>
       <div className="ellipse"></div>
@@ -15,12 +18,25 @@ function Offers() {
                 placeholder="Que recherchez-vous?"
                 type="text"
                 name="query"
-                value=""
+                defaultValue=""
               />
             </span>
             <input type="submit" value="Rechercher" />
           </form>
         </div>
+        <ul className="products-list">
+          {offers.map((product, _) => {
+            return <Product key={product._id} product={product} />;
+            // return (
+            // <Category
+            //   setSelectedProducts={setSelectedProducts}
+            //   selectedProducts={selectedProducts}
+            //   name={category.name}
+            //   meals={category.meals}
+            // />
+            // );
+          })}
+        </ul>
       </main>
     </>
   );
