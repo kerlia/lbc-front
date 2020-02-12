@@ -8,6 +8,8 @@ import axios from "axios";
 
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -15,7 +17,7 @@ import {
   faSearch,
   faUser
 } from "@fortawesome/free-solid-svg-icons";
-import Header from "./components/Header";
+
 library.add(faPlusSquare, faSearch, faUser);
 
 function App() {
@@ -61,6 +63,7 @@ function App() {
                 <Offers />
               </Route>
             </Switch>
+            <Footer />
           </Router>
         </>
       )}
