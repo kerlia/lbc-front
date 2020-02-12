@@ -1,12 +1,27 @@
 import React from "react";
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Offers from "./containers/Offers";
+
 import "./css/reset.css";
 import "./css/App.css";
 
 function App() {
   return (
     <div>
-      <h1>leboncoin-front Ready! ;-)</h1>
+      <div>
+        <h1>Logo de mon site</h1>
+      </div>
+      <Router>
+        <Switch>
+          <Route path="/offers">
+            <Offers />
+          </Route>
+          {/* <Route path="/">
+            <Home />
+          </Route> */}
+        </Switch>
+      </Router>
     </div>
   );
 }
