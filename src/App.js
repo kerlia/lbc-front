@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <div>
-        <h1>Logo de mon site</h1>
+        <h1>Titre de mon site</h1>
       </div>
       <Router>
         <Switch>
