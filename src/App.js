@@ -10,8 +10,13 @@ import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
-library.add(faEnvelope, faKey);
+import {
+  faPlusSquare,
+  faSearch,
+  faUser
+} from "@fortawesome/free-solid-svg-icons";
+import Header from "./components/Header";
+library.add(faPlusSquare, faSearch, faUser);
 
 function App() {
   const API = "https://leboncoin-api.herokuapp.com/api/offer/with-count";
@@ -42,11 +47,12 @@ function App() {
       {isLoading ? (
         <p>...Loading</p>
       ) : (
-        <div>
-          <div>
+        <>
+          {/* <div>
             <h1>Le Bon Coin</h1>
-          </div>
+          </div> */}
           <Router>
+            <Header />
             <Switch>
               <Route path="/offer">
                 <Offer />
@@ -56,7 +62,7 @@ function App() {
               </Route>
             </Switch>
           </Router>
-        </div>
+        </>
       )}
     </>
   );
