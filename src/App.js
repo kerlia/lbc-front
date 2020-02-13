@@ -18,10 +18,13 @@ import {
   faPlusSquare,
   faSearch,
   faUser,
-  faCartPlus
+  faCartPlus,
+  faClock,
+  faEye,
+  faBell
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faPlusSquare, faSearch, faUser, faCartPlus);
+library.add(faPlusSquare, faSearch, faUser, faCartPlus, faClock, faEye, faBell);
 
 function App() {
   const API = "https://leboncoin-api.herokuapp.com/api/offer/with-count";
