@@ -37,7 +37,7 @@ function Offer(props) {
               <div className="card">
                 <div className="product-ima">
                   {offer.pictures[0] ? (
-                    <img src={offer.pictures[0]} alt="no image" />
+                    <img src={offer.pictures[0]} alt="no pic" />
                   ) : (
                     <img
                       src="https://advancepetproduct.com/wp-content/uploads/2019/04/no-image.png"

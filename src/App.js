@@ -41,18 +41,12 @@ function App() {
     fetchData();
   }, []);
 
-  // console.log("Count", count);
-  // console.log("Offers", offers);
-
   return (
     <>
       {isLoading ? (
         <p>...Loading</p>
       ) : (
         <>
-          {/* <div>
-            <h1>Le Bon Coin</h1>
-          </div> */}
           <Router>
             <Header />
             <Switch>

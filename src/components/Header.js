@@ -22,7 +22,7 @@ function Header() {
             </a>
           </div>
           <div className="menu-right">
-            <a href="#">
+            <a href="/login">
               <FontAwesomeIcon className="icon" icon="user" />
               Se connecter
             </a>

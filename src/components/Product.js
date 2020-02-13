@@ -11,7 +11,7 @@ function Product({ product }) {
       <li>
         <div className="product-ima">
           {product.pictures[0] ? (
-            <img src={product.pictures[0]} alt="no image" />
+            <img src={product.pictures[0]} alt="no pic" />
           ) : (
             <img
               src="https://advancepetproduct.com/wp-content/uploads/2019/04/no-image.png"
