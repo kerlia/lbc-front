@@ -1,10 +1,78 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import axios from "axios";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// https://leboncoin-api.herokuapp.com/api/user/sign_up
+// POST
+
+// {
+//   "email": "farid@lereacteur.io",
+//   "username": "Farid",
+//   "password": "azerty"
+// }
+
 function SignUp() {
+  const API = "https://leboncoin-api.herokuapp.com/api/user/sign_up";
+  // const [data, setData] = useState({});
+
+  const [pseudo, setPseudo] = useState("");
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+
+  const handlePseudoChange = event => {
+    const value = event.target.value;
+    setPseudo(value);
+  };
+  const handleEmailChange = event => {
+    const value = event.target.value;
+    setEmail(value);
+  };
+  const handlePassword1Change = event => {
+    const value = event.target.value;
+    setPassword1(value);
+  };
+  const handlePassword2Change = event => {
+    const value = event.target.value;
+    setPassword2(value);
+  };
+  const handleSubmit = async event => {
+    event.preventDefault();
+    console.log(pseudo, email, password1);
+
+    if (pseudo === "" || email === "" || password1 === "" || password2 === "") {
+      alert("please fill in all fields");
+    } else if (password1 !== password2) {
+      alert("The two passwords are not identical");
+    } else {
+      console.log(" >>>> SUBMIT");
+      const newUser = {
+        email: email,
+        username: pseudo,
+        password: password1
+      };
+      const response = await axios.post(API, newUser);
+
+      console.log(response.data);
+    }
+  };
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     // Charger les données
+
+  //     setData(response.data);
+  //     // setIsLoading(false);
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <main className="container">
-      <div className="signup">
+      <div className="signup" onSubmit={handleSubmit}>
         <div className="col-left">
           <h2>Pourquoi créer un compte</h2>
           <div>
@@ -51,7 +119,7 @@ function SignUp() {
               name="pseudo"
               id="form-pseudo"
               defaultValue=""
-              // onChange={props.handleEmailChange}
+              onChange={handlePseudoChange}
             />
             <label htmlFor="form-email">Adresse email</label>
             <input
@@ -60,7 +128,7 @@ function SignUp() {
               name="email"
               id="form-email"
               defaultValue=""
-              // onChange={props.handleEmailChange}
+              onChange={handleEmailChange}
             />
             <label htmlFor="form-password1">Mot de passe *</label>
             <input
@@ -68,8 +136,8 @@ function SignUp() {
               type="password"
               name="password1"
               id="form-password1"
-              value=""
-              // onChange={props.handlePassword1Change}
+              defaultValue=""
+              onChange={handlePassword1Change}
             />
             <label htmlFor="form-password2">Confirmer le mot de passe *</label>
             <input
@@ -77,11 +145,12 @@ function SignUp() {
               type="password"
               name="password2"
               id="form-password2"
-              value=""
+              defaultValue=""
+              onChange={handlePassword2Change}
             />
             <input
               type="submit"
-              value="Se connecter"
+              value="Créer mon Compte Personnel"
               className="btn btn-login"
             />
           </form>
