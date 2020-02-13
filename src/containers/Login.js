@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Login() {
   return (
     <main className="container">
@@ -9,7 +9,7 @@ function Login() {
         <form action="">
           <label htmlFor="form-email">Adresse email</label>
           <input
-            placeholder="......@.........com"
+            placeholder=".........@............com"
             type="text"
             name="email"
             id="form-email"
@@ -19,7 +19,7 @@ function Login() {
 
           <label htmlFor="form-password">Mot de passe</label>
           <input
-            placeholder="Your password"
+            placeholder="**********"
             type="password"
             name="password"
             id="form-password"
@@ -29,7 +29,9 @@ function Login() {
           <input type="submit" value="Se connecter" className="btn btn-login" />
         </form>
         <h3>Vous n'avez pas de compte</h3>
-        <button className="btn btn-new-account">Créer un compte</button>
+        <Link to="/sign-up" className="btn btn-new-account">
+          Créer un compte
+        </Link>
       </div>
     </main>
   );
