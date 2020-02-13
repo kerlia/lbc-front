@@ -9,7 +9,7 @@ function Offers({ offers }) {
   return (
     <>
       <div className="ellipse"></div>
-      <main className="main container">
+      <main className="container">
         <div className="search-bar">
           <form action="">
             <span>
@@ -21,7 +21,7 @@ function Offers({ offers }) {
                 defaultValue=""
               />
             </span>
-            <input type="submit" value="Rechercher" />
+            <input type="submit" class="btn" value="Rechercher" />
           </form>
         </div>
         <ul className="products-list">

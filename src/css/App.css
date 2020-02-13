@@ -84,14 +84,42 @@ header .menu > .menu-left,
 header .menu > .menu-right {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
 }
 
-header .menu > .menu-right > span {
+header .menu > .menu-right > a {
+  padding: 0 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+header .menu > .menu-right > a:after,
+header .menu > .menu-left > a:not(.logo):after {
+  border-bottom: 3px solid #f56b2a;
+  bottom: 0;
+  content: "";
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+}
+
+header .menu > .menu-right > a:hover:after,
+header .menu > .menu-left > a:hover:after,
+header .menu a.selected:after {
+  opacity: 1;
+  -webkit-transition-property: width, opacity;
+  transition-property: width, opacity;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  width: 100%;
 }
 
 header .logo {
@@ -108,7 +136,7 @@ header .logo img {
 header .menu-search {
   display: flex;
   align-items: center;
-  border-bottom: 3px solid #f56b2a;
+  /* border-bottom: 3px solid #f56b2a; */
   line-height: 20px;
   height: 100%;
   text-align: center;
@@ -118,22 +146,32 @@ header .menu-search {
   color: inherit;
   font-size: 1.4rem;
   padding: 0 10px;
+  position: relative;
 }
 
 header .menu-search svg {
   margin-right: 10px;
 }
 
-header .btn-deposit {
+.btn {
   display: flex;
   align-items: center;
   border-radius: 5px;
-  background-color: #f56b2a;
   color: #fff;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.4rem;
   border: none;
+  padding: 10px;
+  background-color: #f56b2a;
+  font-weight: 600;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+header .btn-deposit {
+  align-self: center;
 }
 
 header .btn-deposit svg {
@@ -151,6 +189,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 div.search-bar {
@@ -177,7 +216,6 @@ div.search-bar form {
 
 div.search-bar form span {
   background-color: #f4f6f7;
-
   margin-right: 20px;
   padding-left: 10px;
   display: flex;
@@ -196,17 +234,12 @@ div.search-bar form span input[type="text"] {
   border: none;
   font-size: 1.6rem;
   background-color: inherit;
-  width: 330px;
+  width: 320px;
+  padding-left: 10px;
 }
 
 div.search-bar form input[type="submit"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
   background-color: #4183d7;
-  color: #fff;
-  padding: 10px;
   font-size: 1.6rem;
   border: none;
   width: 230px;
@@ -262,4 +295,85 @@ ul.products-list li .product-infos {
 ul.products-list li .product-infos span {
   color: #f56b2a;
   font-size: 2rem;
+}
+
+div.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+div.product-page {
+  width: 700px;
+}
+
+div.product-page h1 {
+  font-size: 2.6rem;
+  line-height: 3rem;
+}
+
+div.product-page h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin: 12px 0;
+}
+
+div.product-page .card {
+  box-shadow: 1px 1px 8px 1px #e6ebef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+div.product-page .product-ima {
+  width: 100%;
+  height: 395px;
+  background-color: #cad1d9;
+}
+
+div.product-page .product-ima img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+div.product-page .product-infos {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+div.product-page .product-infos span {
+  color: #f56b2a;
+  font-size: 2rem;
+}
+
+aside {
+  align-self: flex-start;
+  width: 280px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+aside h4 {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+aside span {
+  font-size: 1.9rem;
+  line-height: 2rem;
+  color: #4183d7;
+  line-height: 3rem;
+}
+
+aside button {
+  margin-top: 20px;
 }

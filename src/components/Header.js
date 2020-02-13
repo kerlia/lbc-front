@@ -9,23 +9,23 @@ function Header() {
       <div className="container">
         <div className="menu">
           <div className="menu-left">
-            <span className="logo">
+            <a href="/" className="logo">
               <img src={logo} alt="" />
-            </span>
-            <button className="btn-deposit">
+            </a>
+            <button className="btn btn-deposit">
               <FontAwesomeIcon className="icon" icon="plus-square" />
               Déposer une annonce
             </button>
-            <a href="/" className="menu-search">
+            <a href="/" className="menu-search selected">
               <FontAwesomeIcon className="icon" icon="search" />
               Rechercher
             </a>
           </div>
           <div className="menu-right">
-            <span>
+            <a href="#">
               <FontAwesomeIcon className="icon" icon="user" />
               Se connecter
-            </span>
+            </a>
           </div>
         </div>
       </div>
