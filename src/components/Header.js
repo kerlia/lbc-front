@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 import logo from "../img/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -16,16 +16,21 @@ function Header() {
               <FontAwesomeIcon className="icon" icon="plus-square" />
               Déposer une annonce
             </button>
-            <a href="/" className="menu-search selected">
+            <NavLink
+              to="/"
+              exact={true}
+              activeClassName="selected"
+              className="menu-search"
+            >
               <FontAwesomeIcon className="icon" icon="search" />
               Rechercher
-            </a>
+            </NavLink>
           </div>
           <div className="menu-right">
-            <a href="/login">
+            <NavLink to="/login" activeClassName="selected">
               <FontAwesomeIcon className="icon" icon="user" />
               Se connecter
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

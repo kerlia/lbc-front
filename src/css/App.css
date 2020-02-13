@@ -159,6 +159,10 @@ header .menu-search {
   position: relative;
 }
 
+header .menu-search svg {
+  margin-right: 10px;
+}
+
 .btn {
   display: flex;
   align-items: center;
