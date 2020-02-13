@@ -15,10 +15,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPlusSquare,
   faSearch,
-  faUser
+  faUser,
+  faCartPlus
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faPlusSquare, faSearch, faUser);
+library.add(faPlusSquare, faSearch, faUser, faCartPlus);
 
 function App() {
   const API = "https://leboncoin-api.herokuapp.com/api/offer/with-count";

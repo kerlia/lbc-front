@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Moment from "react-moment";
 import nl2br from "react-nl2br";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // https://leboncoin-api.herokuapp.com/api/offer/5dcc803be3e5c000154b03f3
 
@@ -61,7 +62,10 @@ function Offer(props) {
             <aside>
               <h4>{offer.creator.account.username}</h4>
               <span>17 annonces en ligne</span>
-              <button className="btn">Acheter</button>
+              <button className="btn">
+                <FontAwesomeIcon className="icon" icon="cart-plus" />
+                Acheter
+              </button>
             </aside>
           </div>
         </main>
