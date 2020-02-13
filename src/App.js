@@ -8,6 +8,8 @@ import axios from "axios";
 
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
+import SignUp from "./containers/SignUp";
+import Login from "./containers/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -51,6 +53,12 @@ function App() {
           <Router>
             <Header />
             <Switch>
+              <Route path="/sign-up">
+                <SignUp />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
               <Route path="/offer/:id">
                 <Offer />
               </Route>

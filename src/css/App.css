@@ -6,7 +6,7 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: white;
+  background: #fafafa;
   color: #1a1a1a;
   font-size: 1.4rem;
   line-height: 1.5rem;
@@ -290,6 +290,7 @@ ul.products-list li {
   box-shadow: 1px 1px 8px 1px #e6ebef;
   border-radius: 5px;
   overflow: hidden;
+  background-color: white;
 }
 ul.products-list li .product-ima {
   width: 240px;
@@ -342,6 +343,7 @@ div.product-page .card {
   box-shadow: 1px 1px 8px 1px #e6ebef;
   border-radius: 5px;
   overflow: hidden;
+  background-color: white;
 }
 
 div.product-page .product-ima {
@@ -377,6 +379,7 @@ aside {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 aside h4 {
@@ -399,4 +402,75 @@ aside button {
 
 aside button svg {
   font-size: 1.7rem !important;
+}
+
+div.login {
+  background-color: white;
+  padding: 50px;
+  width: 715px;
+  margin: 30px auto;
+}
+
+div.login h1 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #1a1a1a;
+  border-bottom: 3px solid #f56b2a;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+div.login h3 {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e4e8ec;
+}
+
+div.login form {
+  display: flex;
+  flex-direction: column;
+}
+
+div.login form input {
+  border: 1px solid #d9e0eb;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+div.login form label {
+  margin-bottom: 13px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+div.login form input {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+div.login form input.btn-login {
+  background-color: rgb(65, 131, 215);
+  margin-bottom: 35px;
+  margin-top: 5px;
+}
+
+div.login form input.btn-login:hover {
+  background-color: rgba(65, 131, 215, 0.9);
+}
+div.login .btn-new-account {
+  width: 100%;
+  background-color: white;
+  color: rgb(65, 131, 215);
+  border: 1px solid rgb(65, 131, 215);
+  margin-top: 30px;
+}
+div.login .btn-new-account:hover {
+  background-color: rgb(65, 131, 215);
+  color: white;
 }

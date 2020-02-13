@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // https://leboncoin-api.herokuapp.com/api/offer/5dcc803be3e5c000154b03f3
 
-function Offer(props) {
+function Offer() {
   const { id } = useParams();
   const API = "https://leboncoin-api.herokuapp.com/api/offer/" + id;
   const [offer, setOffer] = useState({});
