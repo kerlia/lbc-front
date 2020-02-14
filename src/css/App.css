@@ -25,6 +25,10 @@ a:visited {
   color: #1a1a1a;
 }
 
+.semi-bold {
+  font-weight: 600;
+}
+
 h1 {
   font-size: 3.2rem;
   font-weight: bold;

@@ -1,12 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
-function Login() {
+import React, { useState, useEffect } from "react";
+
+import { useHistory, Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import axios from "axios";
+
+// https://leboncoin-api.herokuapp.com/api/user/log_in
+// POST
+// {
+//   "email": "farid@lereacteur.io",
+//   "password": "azerty"
+// }
+
+function Login({ user, setUser }) {
+  const history = useHistory();
+  const API = "https://leboncoin-api.herokuapp.com/api/user/log_in";
+
+  if (user) {
+    history.push("/");
+  }
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = e => {
+    const value = e.target.value;
+    setEmail(value);
+  };
+  const handlePasswordChange = e => {
+    const value = e.target.value;
+    setPassword(value);
+  };
+  const handleSubmit = async e => {
+    e.preventDefault();
+    console.log(email, password);
+
+    if (email === "" || password === "") {
+      alert("please fill in all fields");
+    } else {
+      console.log(" >>>> SUBMIT");
+      const user = {
+        email: email,
+        password: password
+      };
+      const response = await axios.post(API, user);
+      console.log("response>>>", response.data);
+      Cookies.set("lbc-cook", response.data.token);
+      setUser({ "lbc-cook": response.data.token });
+      history.push("/");
+    }
+  };
+
   return (
     <main className="container">
       <div className="login">
         <h1>Connexion</h1>
         {/* onSubmit={props.handleSubmit} */}
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <label htmlFor="form-email">Adresse email</label>
           <input
             placeholder=".........@............com"
@@ -14,7 +63,7 @@ function Login() {
             name="email"
             id="form-email"
             defaultValue=""
-            // onChange={props.handleEmailChange}
+            onChange={handleEmailChange}
           />
 
           <label htmlFor="form-password">Mot de passe</label>
@@ -23,8 +72,8 @@ function Login() {
             type="password"
             name="password"
             id="form-password"
-            value=""
-            // onChange={props.handlePassword1Change}
+            defaultValue=""
+            onChange={handlePasswordChange}
           />
           <input type="submit" value="Se connecter" className="btn btn-login" />
         </form>

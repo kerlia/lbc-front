@@ -1,45 +1,50 @@
 import React, { useState, useEffect } from "react";
 
+import { useHistory } from "react-router-dom";
+import Cookies from "js-cookie";
 import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // https://leboncoin-api.herokuapp.com/api/user/sign_up
 // POST
-
 // {
 //   "email": "farid@lereacteur.io",
 //   "username": "Farid",
 //   "password": "azerty"
 // }
 
-function SignUp() {
+function SignUp({ user, setUser }) {
+  const history = useHistory();
   const API = "https://leboncoin-api.herokuapp.com/api/user/sign_up";
-  // const [data, setData] = useState({});
+
+  if (user) {
+    history.push("/");
+  }
 
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const handlePseudoChange = event => {
-    const value = event.target.value;
+  const handlePseudoChange = e => {
+    const value = e.target.value;
     setPseudo(value);
   };
-  const handleEmailChange = event => {
-    const value = event.target.value;
+  const handleEmailChange = e => {
+    const value = e.target.value;
     setEmail(value);
   };
-  const handlePassword1Change = event => {
-    const value = event.target.value;
+  const handlePassword1Change = e => {
+    const value = e.target.value;
     setPassword1(value);
   };
-  const handlePassword2Change = event => {
-    const value = event.target.value;
+  const handlePassword2Change = e => {
+    const value = e.target.value;
     setPassword2(value);
   };
-  const handleSubmit = async event => {
-    event.preventDefault();
+  const handleSubmit = async e => {
+    e.preventDefault();
     console.log(pseudo, email, password1);
 
     if (pseudo === "" || email === "" || password1 === "" || password2 === "") {
@@ -54,25 +59,15 @@ function SignUp() {
         password: password1
       };
       const response = await axios.post(API, newUser);
-
+      Cookies.set("lbc-cook", response.data.token);
+      history.push("/");
       console.log(response.data);
     }
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     // Charger les données
-
-  //     setData(response.data);
-  //     // setIsLoading(false);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
   return (
     <main className="container">
-      <div className="signup" onSubmit={handleSubmit}>
+      <div className="signup">
         <div className="col-left">
           <h2>Pourquoi créer un compte</h2>
           <div>
@@ -111,7 +106,7 @@ function SignUp() {
         </div>
         <div className="col-right">
           <h2>Créez un compte</h2>
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <label htmlFor="form-pseudo">Pseudo</label>
             <input
               placeholder="Votre pseudo"

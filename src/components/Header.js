@@ -1,9 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import Cookies from "js-cookie";
+
 import logo from "../img/logo.svg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Header() {
+function Header({ user, setUser }) {
   return (
     <header>
       <div className="container">
@@ -27,10 +30,23 @@ function Header() {
             </NavLink>
           </div>
           <div className="menu-right">
-            <NavLink to="/login" activeClassName="selected">
-              <FontAwesomeIcon className="icon" icon="user" />
-              Se connecter
-            </NavLink>
+            {user ? (
+              <Link
+                className="semi-bold"
+                onClick={e => {
+                  e.preventDefault();
+                  setUser(null);
+                  Cookies.remove("lbc-cook");
+                }}
+              >
+                Se déconnecter
+              </Link>
+            ) : (
+              <NavLink to="/login" activeClassName="selected">
+                <FontAwesomeIcon className="icon" icon="user" />
+                Se connecter
+              </NavLink>
+            )}
           </div>
         </div>
       </div>
