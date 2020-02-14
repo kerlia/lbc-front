@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { useHistory, Link } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -11,11 +11,11 @@ import axios from "axios";
 //   "password": "azerty"
 // }
 
-function Login({ user, setUser }) {
+function Login({ user, setUser, modal, setModal }) {
   const history = useHistory();
   const API = "https://leboncoin-api.herokuapp.com/api/user/log_in";
 
-  if (user) {
+  if (user && !modal) {
     history.push("/");
   }
 
@@ -46,43 +46,46 @@ function Login({ user, setUser }) {
       console.log("response>>>", response.data);
       Cookies.set("lbc-cook", response.data.token);
       setUser({ "lbc-cook": response.data.token });
-      history.push("/");
+      if (modal) {
+        console.log(">>>>dans modal");
+        setModal(false);
+      } else {
+        history.push("/");
+      }
     }
   };
 
   return (
-    <main className="container">
-      <div className="login">
-        <h1>Connexion</h1>
-        {/* onSubmit={props.handleSubmit} */}
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="form-email">Adresse email</label>
-          <input
-            placeholder=".........@............com"
-            type="text"
-            name="email"
-            id="form-email"
-            defaultValue=""
-            onChange={handleEmailChange}
-          />
+    <div className="login">
+      <h1>Connexion</h1>
+      {/* onSubmit={props.handleSubmit} */}
+      <form action="" onSubmit={handleSubmit}>
+        <label htmlFor="form-email">Adresse email</label>
+        <input
+          placeholder=".........@............com"
+          type="text"
+          name="email"
+          id="form-email"
+          defaultValue=""
+          onChange={handleEmailChange}
+        />
 
-          <label htmlFor="form-password">Mot de passe</label>
-          <input
-            placeholder="**********"
-            type="password"
-            name="password"
-            id="form-password"
-            defaultValue=""
-            onChange={handlePasswordChange}
-          />
-          <input type="submit" value="Se connecter" className="btn btn-login" />
-        </form>
-        <h3>Vous n'avez pas de compte</h3>
-        <Link to="/sign-up" className="btn btn-new-account">
-          Créer un compte
-        </Link>
-      </div>
-    </main>
+        <label htmlFor="form-password">Mot de passe</label>
+        <input
+          placeholder="**********"
+          type="password"
+          name="password"
+          id="form-password"
+          defaultValue=""
+          onChange={handlePasswordChange}
+        />
+        <input type="submit" value="Se connecter" className="btn btn-login" />
+      </form>
+      <h3>Vous n'avez pas de compte</h3>
+      <Link to="/sign-up" className="btn btn-new-account">
+        Créer un compte
+      </Link>
+    </div>
   );
 }
 

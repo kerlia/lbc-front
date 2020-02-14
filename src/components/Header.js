@@ -6,7 +6,12 @@ import logo from "../img/logo.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Header({ user, setUser }) {
+function Header({ user, setUser, setModal }) {
+  // const switchModal = () => {
+  //   console.log("openModal");
+  //   document.querySelector(".modal").classList.toggle("hidden");
+  // };
+
   return (
     <header>
       <div className="container">
@@ -30,6 +35,14 @@ function Header({ user, setUser }) {
             </NavLink>
           </div>
           <div className="menu-right">
+            <button
+              onClick={e => {
+                // const modal = true;
+                setModal(true);
+              }}
+            >
+              modal
+            </button>
             {user ? (
               <Link
                 className="semi-bold"

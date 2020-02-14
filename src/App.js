@@ -36,6 +36,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const userState = cookieToken ? { "lbc-cook": cookieToken } : null;
   const [user, setUser] = useState(userState);
+  const [modal, setModal] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -59,13 +60,20 @@ function App() {
       ) : (
         <>
           <Router>
-            <Header user={user} setUser={setUser} />
+            <Header user={user} setUser={setUser} setModal={setModal} />
             <Switch>
               <Route path="/sign-up">
                 <SignUp user={user} setUser={setUser} />
               </Route>
-              <Route u path="/login">
-                <Login ser={user} setUser={setUser} />
+              <Route path="/login">
+                <main className="container">
+                  <Login
+                    user={user}
+                    setUser={setUser}
+                    modal={modal}
+                    setModal={setModal}
+                  />
+                </main>
               </Route>
               <Route path="/offer/:id">
                 <Offer />
@@ -74,6 +82,16 @@ function App() {
                 <Offers offers={offers} />
               </Route>
             </Switch>
+            {modal && (
+              <div className="modal">
+                <Login
+                  user={user}
+                  setUser={setUser}
+                  modal={modal}
+                  setModal={setModal}
+                />
+              </div>
+            )}
             <Footer />
           </Router>
         </>

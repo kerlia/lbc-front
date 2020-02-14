@@ -574,3 +574,19 @@ div.signup .cgv a {
 div.signup .cgv a:hover {
   text-decoration: underline;
 }
+
+.modal {
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal .login {
+  width: 500px;
+}
