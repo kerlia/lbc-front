@@ -27,14 +27,6 @@ function Offers({ offers }) {
         <ul className="products-list">
           {offers.map((product, _) => {
             return <Product key={product._id} product={product} />;
-            // return (
-            // <Category
-            //   setSelectedProducts={setSelectedProducts}
-            //   selectedProducts={selectedProducts}
-            //   name={category.name}
-            //   meals={category.meals}
-            // />
-            // );
           })}
         </ul>
       </main>

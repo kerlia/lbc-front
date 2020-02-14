@@ -150,7 +150,6 @@ header .logo img {
 header .menu-search {
   display: flex;
   align-items: center;
-  /* border-bottom: 3px solid #f56b2a; */
   line-height: 20px;
   height: 100%;
   text-align: center;
@@ -226,12 +225,10 @@ div.search-bar {
 }
 
 div.search-bar form {
-  /* width: 55%; */
   padding: 43px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: blue; */
 }
 
 div.search-bar form span {
@@ -501,6 +498,7 @@ div.signup {
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 div.signup h2 {
@@ -509,12 +507,9 @@ div.signup h2 {
 }
 
 div.signup .col-left {
-  /* background-color: wheat; */
-  width: 52%;
+  width: 45%;
   padding-left: 20px;
   margin-right: 10px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 div.signup h3 {
@@ -528,7 +523,7 @@ div.signup .col-left > div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 div.signup .col-left > div > svg {
@@ -539,8 +534,6 @@ div.signup .col-left > div > svg {
   text-align: left;
   color: #4183d7;
   margin-top: 0px;
-  /* background-color: red; */
-  /* align-self: center; */
 }
 
 div.signup .col-left > div > div {
@@ -548,7 +541,6 @@ div.signup .col-left > div > div {
 }
 
 div.signup .col-right {
-  /* background-color: blue; */
   width: 48%;
   margin-left: 10px;
 }
