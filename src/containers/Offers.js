@@ -8,7 +8,9 @@ function Offers({ offers }) {
   console.log("Offers", offers);
   return (
     <>
-      <div className="ellipse"></div>
+      <div className="ellipse-parent">
+        <div className="ellipse"></div>
+      </div>
       <main className="container">
         <div className="search-bar">
           <form action="">

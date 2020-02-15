@@ -294,6 +294,13 @@ div.search-bar form input[type="submit"]:hover {
   transition: 0.2s ease-out;
 }
 
+.ellipse-parent {
+  position: absolute;
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+}
+
 .ellipse {
   z-index: -1;
   position: absolute;
@@ -624,6 +631,7 @@ div.signup .cgv a:hover {
   top: -18px;
   right: -13px;
   font-size: 3.5rem;
+  cursor: pointer;
 }
 
 .fa-stack {
