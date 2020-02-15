@@ -40,19 +40,24 @@ library.add(
 );
 
 function App() {
-  const cookieToken = Cookies.get("lbc-cook");
   const API = "https://leboncoin-api.herokuapp.com/api/offer/with-count";
+  const LIMIT = 5;
 
-  const [count, setCount] = useState(0);
-  const [offers, setOffers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const cookieToken = Cookies.get("lbc-cook");
   const userState = cookieToken ? { "lbc-cook": cookieToken } : null;
   const [user, setUser] = useState(userState);
+
+  const [isLoading, setIsLoading] = useState(true);
   const [modal, setModal] = useState(false);
+  const [offers, setOffers] = useState([]);
+  const [count, setCount] = useState(0);
+  const [skip, setSkip] = useState(0);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(API);
+      const apiUrl = API + "?skip=" + 0 + "&limit=" + LIMIT;
+      const response = await axios.get(apiUrl);
+      console.log(">>>>>>> api", apiUrl);
       setCount(response.data.count);
       setOffers(response.data.offers);
       setIsLoading(false);
