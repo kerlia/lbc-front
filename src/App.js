@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./css/reset.css";
 import "./css/App.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -16,16 +16,28 @@ import Footer from "./components/Footer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faCircle,
   faPlusSquare,
   faSearch,
   faUser,
   faCartPlus,
   faClock,
   faEye,
-  faBell
+  faBell,
+  faTimesCircle
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faPlusSquare, faSearch, faUser, faCartPlus, faClock, faEye, faBell);
+library.add(
+  faCircle,
+  faPlusSquare,
+  faSearch,
+  faUser,
+  faCartPlus,
+  faClock,
+  faEye,
+  faBell,
+  faTimesCircle
+);
 
 function App() {
   const cookieToken = Cookies.get("lbc-cook");
@@ -83,7 +95,14 @@ function App() {
               </Route>
             </Switch>
             {modal && (
-              <div className="modal">
+              <div
+                className="modal"
+                onClick={e => {
+                  if (e.target.className === "modal") {
+                    setModal(false);
+                  }
+                }}
+              >
                 <Login
                   user={user}
                   setUser={setUser}

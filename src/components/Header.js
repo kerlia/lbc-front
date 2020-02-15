@@ -45,6 +45,7 @@ function Header({ user, setUser, setModal }) {
             </button>
             {user ? (
               <Link
+                to=""
                 className="semi-bold"
                 onClick={e => {
                   e.preventDefault();

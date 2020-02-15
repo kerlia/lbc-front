@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // https://leboncoin-api.herokuapp.com/api/user/log_in
 // POST
@@ -57,6 +58,18 @@ function Login({ user, setUser, modal, setModal }) {
 
   return (
     <div className="login">
+      {{ modal } && (
+        <span
+          className="fa-stack close"
+          onClick={e => {
+            setModal(false);
+          }}
+        >
+          <FontAwesomeIcon className="fa-stack-1x white" icon="circle" />
+          <FontAwesomeIcon className="fa-stack-1x blue" icon="times-circle" />
+        </span>
+      )}
+
       <h1>Connexion</h1>
       {/* onSubmit={props.handleSubmit} */}
       <form action="" onSubmit={handleSubmit}>
