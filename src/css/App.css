@@ -631,6 +631,10 @@ div.signup .cgv a:hover {
   height: 1em;
 }
 
+main .fa-stack {
+  display: none;
+}
+
 .rotate {
   transition: transform 0.2s;
 }

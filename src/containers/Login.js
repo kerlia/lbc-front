@@ -58,20 +58,18 @@ function Login({ user, setUser, modal, setModal }) {
 
   return (
     <div className="login">
-      {{ modal } && (
-        <span
-          className="fa-stack close"
-          onClick={e => {
-            setModal(false);
-          }}
-        >
-          <FontAwesomeIcon className="fa-stack-1x white" icon="circle" />
-          <FontAwesomeIcon
-            className="fa-stack-1x blue rotate"
-            icon="times-circle"
-          />
-        </span>
-      )}
+      <span
+        className="fa-stack close"
+        onClick={e => {
+          setModal(false);
+        }}
+      >
+        <FontAwesomeIcon className="fa-stack-1x white" icon="circle" />
+        <FontAwesomeIcon
+          className="fa-stack-1x blue rotate"
+          icon="times-circle"
+        />
+      </span>
 
       <h1>Connexion</h1>
       {/* onSubmit={props.handleSubmit} */}
