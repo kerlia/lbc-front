@@ -66,7 +66,10 @@ function Login({ user, setUser, modal, setModal }) {
           }}
         >
           <FontAwesomeIcon className="fa-stack-1x white" icon="circle" />
-          <FontAwesomeIcon className="fa-stack-1x blue" icon="times-circle" />
+          <FontAwesomeIcon
+            className="fa-stack-1x blue rotate"
+            icon="times-circle"
+          />
         </span>
       )}
 

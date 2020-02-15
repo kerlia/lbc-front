@@ -21,7 +21,7 @@ function Offers({ offers }) {
                 defaultValue=""
               />
             </span>
-            <input type="submit" class="btn" value="Rechercher" />
+            <input type="submit" className="btn" value="Rechercher" />
           </form>
         </div>
         <ul className="products-list">

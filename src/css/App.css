@@ -14,6 +14,7 @@ body {
 
 * {
   box-sizing: border-box;
+  outline-style: none;
 }
 
 a {
@@ -167,6 +168,7 @@ header .menu-search svg {
 }
 
 .btn {
+  /* position: relative; */
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -177,16 +179,40 @@ header .menu-search svg {
   font-weight: 500;
   justify-content: center;
   font-size: 1.4rem;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  /* transition: background-color 0.25s ease; */
 }
 
-.btn svg {
-  margin-right: 10px;
-}
 .btn:hover {
   cursor: pointer;
   background-color: rgba(245, 107, 42, 0.9);
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
+}
+
+/* .btn::after {
+  position: absolute;
+  border-radius: 5px;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition-property: all;
+  transition-duration: 0.3s;
+  background-color: rgba(245, 107, 42, 0.9);
+  transform-origin: left;
+  transition: width 0.25s ease;
+  z-index: -1;
+  color: white;
+}
+
+.btn:hover::after {
+  width: 100%;
+} */
+
+.btn svg {
+  margin-right: 10px;
 }
 
 header .btn-deposit {
@@ -603,6 +629,14 @@ div.signup .cgv a:hover {
 .fa-stack {
   width: 1em;
   height: 1em;
+}
+
+.rotate {
+  transition: transform 0.2s;
+}
+
+.rotate:hover {
+  transform: rotate(90deg);
 }
 
 .white {
