@@ -7,11 +7,6 @@ import logo from "../img/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header({ user, setUser, setModal }) {
-  // const switchModal = () => {
-  //   console.log("openModal");
-  //   document.querySelector(".modal").classList.toggle("hidden");
-  // };
-
   return (
     <header>
       <div className="container">

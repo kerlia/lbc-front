@@ -623,7 +623,6 @@ div.signup .cgv a:hover {
 .modal .login {
   position: relative;
   width: 500px;
-  /* background-color: red; */
 }
 
 .modal .login .close {
@@ -657,4 +656,20 @@ main .fa-stack {
 
 .blue {
   color: #4183d7;
+}
+
+ul.paging {
+  display: flex;
+}
+
+ul.paging li {
+  display: flex;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+ul.paging li a.selected {
+  background-color: rgb(245, 107, 42);
 }
