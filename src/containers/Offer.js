@@ -13,17 +13,16 @@ function Offer() {
   const [offer, setOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(API);
-      setOffer(response.data);
-      setIsLoading(false);
-    } catch (e) {
-      console.error("Error fetching data from api");
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(API);
+        setOffer(response.data);
+        setIsLoading(false);
+      } catch (e) {
+        console.error("Error fetching data from api");
+      }
+    };
     fetchData();
   }, []);
 
