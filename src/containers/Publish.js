@@ -57,9 +57,9 @@ function Publish() {
 
       const formData = new FormData();
       formData.append("title", title);
-      formData.append("desc", desc);
+      formData.append("description", desc);
       formData.append("price", price);
-      formData.append("files", file);
+      formData.append("file", file);
 
       try {
         const response = await axios.post(API, formData, {
