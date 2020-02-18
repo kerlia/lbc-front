@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import logo from "../img/logo.svg";
@@ -7,6 +7,8 @@ import logo from "../img/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header({ user, setUser, setModal }) {
+  const history = useHistory();
+
   return (
     <header>
       <div className="container">
@@ -15,7 +17,12 @@ function Header({ user, setUser, setModal }) {
             <a href="/" className="logo">
               <img src={logo} alt="" />
             </a>
-            <button className="btn btn-deposit">
+            <button
+              className="btn btn-deposit"
+              onClick={e => {
+                history.push("/publish");
+              }}
+            >
               <FontAwesomeIcon className="icon" icon="plus-square" />
               Déposer une annonce
             </button>

@@ -50,6 +50,7 @@ h3 {
 }
 
 .container {
+  /* min-height: calc(100vh-60-125); */
   width: 1000px;
   margin: 0 auto;
 }
@@ -442,7 +443,7 @@ aside button svg {
   font-size: 1.7rem !important;
 }
 
-div.login {
+div.main-form {
   background-color: white;
   padding: 50px;
   width: 715px;
@@ -450,7 +451,7 @@ div.login {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-div.login h1 {
+div.main-form h1 {
   font-size: 2.4rem;
   line-height: 2.8rem;
   text-align: center;
@@ -461,7 +462,7 @@ div.login h1 {
   margin-bottom: 25px;
 }
 
-div.login h3 {
+div.main-form h3 {
   font-size: 1.6rem;
   line-height: 1.9rem;
   font-weight: bold;
@@ -471,20 +472,36 @@ div.login h3 {
   border-top: 1px solid #e4e8ec;
 }
 
-div.login form,
+div.main-form form,
 div.signup form {
   display: flex;
   flex-direction: column;
 }
 
-div.login form input,
+div.main-form form input,
+div.main-form form textarea,
 div.signup form input {
   border: 1px solid #d9e0eb;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
 }
 
-div.login form label,
+div.main-form form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+div.main-form form span span {
+  margin-left: 7px;
+  font-size: 1.8rem;
+}
+div.main-form form input[name="price"] {
+  width: 40%;
+}
+
+div.main-form form label,
 div.signup form label {
   margin-bottom: 13px;
   font-weight: 500;
@@ -492,32 +509,27 @@ div.signup form label {
   line-height: 1.9rem;
   color: #1a1a1a;
 }
-div.login form input,
-div.signup form input {
-  margin-bottom: 25px;
-  font-size: 1.5rem;
-}
 
-div.login form input.btn-login,
+div.main-form form input.btn-login,
 div.signup form input.btn-login {
   background-color: rgb(65, 131, 215);
   margin-bottom: 35px;
   margin-top: 5px;
 }
 
-div.login form input.btn-login:hover,
+div.main-form form input.btn-login:hover,
 div.signup form input.btn-login:hover {
   background-color: rgba(65, 131, 215, 0.9);
 }
 
-div.login .btn-new-account {
+div.main-form .btn-new-account {
   width: 100%;
   background-color: white;
   color: rgb(65, 131, 215);
   border: 1px solid rgb(65, 131, 215);
   margin-top: 30px;
 }
-div.login .btn-new-account:hover {
+div.main-form .btn-new-account:hover {
   background-color: rgb(65, 131, 215);
   color: white;
 }
@@ -620,12 +632,12 @@ div.signup .cgv a:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal .login {
+.modal .main-form {
   position: relative;
   width: 500px;
 }
 
-.modal .login .close {
+.modal .main-form .close {
   position: absolute;
   top: -18px;
   right: -13px;

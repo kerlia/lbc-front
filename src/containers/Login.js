@@ -57,7 +57,7 @@ function Login({ user, setUser, modal, setModal }) {
   };
 
   return (
-    <div className="login">
+    <div className="login main-form">
       <span
         className="fa-stack close"
         onClick={e => {

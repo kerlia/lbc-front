@@ -13,7 +13,7 @@ function Offers() {
   const page = parseInt(p);
 
   const API = "https://leboncoin-api.herokuapp.com/api/offer/with-count";
-  const LIMIT = 15;
+  const LIMIT = 100;
 
   const [isLoading, setIsLoading] = useState(true);
   const [offers, setOffers] = useState([]);
